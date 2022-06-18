@@ -22,6 +22,7 @@ import Profiles from './components/Profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/Post/Post';
+import Crypto from './components/CryptoAPI/Crypto';
 
 //Check for token 
 if(localStorage.jwtToken){
@@ -56,6 +57,7 @@ function App() {
         <Route exact path="/register" component={Register}></Route>
         <Route exact path="/profiles" component={Profiles}></Route>
         <Route exact path="/profile/:handle" component={Profile}></Route>
+        <Route exact path="/crypto-prices" component={Crypto}></Route>
 
 <Switch>
 <PrivateRoute exact path="/dashboard" component={Dashboard}></PrivateRoute>

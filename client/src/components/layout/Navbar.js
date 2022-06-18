@@ -5,6 +5,7 @@ import { connect} from 'react-redux';
 import {logoutUser} from '../../actions/authActions';
 import {clearCurrentProfile} from '../../actions/profileActions';
 import Profiles from '../../components/Profiles/Profiles';
+import Crypto from '../CryptoAPI/Crypto';
 class Navbar extends   Component {
   onLogoutClick(e){
     e.preventDefault();
@@ -23,9 +24,11 @@ class Navbar extends   Component {
             <Link className="nav-link mr-2" to="/dashboard">Dashboard</Link>
           </li>
          <li className="nav-item">
+          
           <a href="" 
           onClick={this.onLogoutClick.bind(this)}
           className="nav-link">
+
           <img 
           src={user.avatar} 
           alt={user.name} 
@@ -39,6 +42,7 @@ class Navbar extends   Component {
          </li>
        </ul>
       );
+
       //Guest links
       const guestLink = (
         <ul className="navbar-nav ml-auto">
@@ -64,6 +68,10 @@ class Navbar extends   Component {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
           <Link className="nav-link" to="/profiles"> Developers
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link className="nav-link" to="/crypto-prices"> Crypto prices
             </Link>
           </li>
         </ul>
