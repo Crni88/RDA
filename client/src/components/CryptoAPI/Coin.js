@@ -1,6 +1,6 @@
 import React from 'react'
-
-const Coin = ({image,name,symbol,price,volume}) => {
+import './Crypto.css'
+const Coin = ({image,name,symbol,price,volume,priceChange,marketcap}) => {
   return (
     <div className='coin-container'>
         <div className='coin-row'>
@@ -17,6 +17,18 @@ const Coin = ({image,name,symbol,price,volume}) => {
                  * toLocaleString adds comas betwen the numbers 
                  */}
                 <p className='coin-volume'>${volume.toLocaleString()}</p>
+                {priceChange <0?(
+                    <p className='coin-percent red'>{priceChange.toFixed(3)}%</p>
+                ):
+                (
+                    <p className='coin-percent green'>{priceChange.toFixed(3)}%</p>
+
+                )
+            }
+
+            <p className='coin-marketcap'>
+                Mkt Cap: ${marketcap.toLocaleString()}
+            </p>
             </div>
         </div>
     </div>

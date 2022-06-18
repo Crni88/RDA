@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import Coin from './Coin';
 
-
 export default function Crypto() {
 
     const [coins,setCoins] = useState([]);
@@ -43,6 +42,8 @@ export default function Crypto() {
                 price={coin.price}
                 symbol={coin.symbol}
                 volume={coin.market_cap}
+                priceChange={coin.price_change_percentage_24h}
+                marketcap={coin.total_volume}
                 />
             )
         })}
