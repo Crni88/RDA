@@ -29,11 +29,11 @@ export default function Crypto() {
         <div className='coin-search'>
         <h1 className='coin-text'>Looking for something specific?</h1>
             <form>
-                <input type="text" placeholder="Search" className="coin-search" onChange={handleChange}/>
+                <input type="text" placeholder="Search" className="coin-input" onChange={handleChange}/>
 
             </form>
         </div>
-        {filteredCoins.map(coin =>{
+        {filteredCoins.map((coin,index) =>{
             return (
                 <Coin 
                 key={coin.id} 
@@ -44,6 +44,7 @@ export default function Crypto() {
                 volume={coin.market_cap}
                 priceChange={coin.price_change_percentage_24h}
                 marketcap={coin.total_volume}
+                index={index}
                 />
             )
         })}
