@@ -1,0 +1,42 @@
+{
+  "name": "magister",
+  "version": "1.0.0",
+  "description": "Social Network for Developers",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crni88/Magister.git"
+  },
+  "author": "Tarik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Crni88/Magister/issues"
+  },
+  "homepage": "https://github.com/Crni88/Magister#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.14.1",
+    "gravatar": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "react-scripts": "^5.0.1",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
