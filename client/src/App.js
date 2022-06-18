@@ -59,6 +59,7 @@ function App() {
         <Route exact path="/profile/:handle" component={Profile}></Route>
         <Route exact path="/crypto-prices" component={Crypto}></Route>
 
+
 <Switch>
 <PrivateRoute exact path="/dashboard" component={Dashboard}></PrivateRoute>
 
